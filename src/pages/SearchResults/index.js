@@ -16,13 +16,13 @@ export default function SearchResults({ params }) {
   })
 
 
-//Para controlar la llamada a la funcion al llegar al final (Scroll Infinito)
+  //Para controlar la llamada a la funcion al llegar al final (Scroll Infinito)
+  // eslint-disable-next-line
   const debounceHandleNextPage = useCallback(debounce(
     () => setPage(prevPage => prevPage + 1), 200
   ), [setPage])
 
   useEffect(function () {
-    console.log(isNearScreen)
     if (isNearScreen) debounceHandleNextPage()
   }, [debounceHandleNextPage, isNearScreen])
 

@@ -1,4 +1,4 @@
-import { Link, useLocation } from "wouter"
+import { useLocation } from "wouter"
 import ListOfGifs from 'components/ListOfGifs'
 import { useGifs } from 'hooks/useGifs'
 import TreandingSearches from "components/TrendingSearches"
@@ -7,8 +7,9 @@ import { useCallback } from "react"
 
 export default function Home() {
 
-  const [path, pushLocation] = useLocation()
-  const { loading, gifs } = useGifs()
+  // eslint-disable-next-line
+  const [_, pushLocation] = useLocation()
+  const { gifs } = useGifs()
 
   const handleSubmit = useCallback(({ keyword }) => {
     // navegar a otra ruta
