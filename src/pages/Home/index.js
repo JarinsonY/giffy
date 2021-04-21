@@ -1,7 +1,7 @@
 import { useLocation } from "wouter"
 import ListOfGifs from 'components/ListOfGifs'
 import { useGifs } from 'hooks/useGifs'
-import TreandingSearches from "components/TrendingSearches"
+import TrendingSearches from "components/TrendingSearches"
 import SearchForm from "components/SearchForm"
 import { useCallback } from "react"
 
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <SearchForm onSubmit={handleSubmit} />
+      {/* <SearchForm onSubmit={handleSubmit} />
 
       <div className="App-main">
         <div className="App-results">
@@ -26,7 +26,19 @@ export default function Home() {
           <ListOfGifs gifs={gifs} />
         </div>
         <div className="App-category">
-          <TreandingSearches />
+          <TreandingSearches /> */}
+      <header className="o-header">
+        <SearchForm onSubmit={handleSubmit} />
+      </header>
+      <div className="App-wrapper">
+        <div className="App-main">
+          <div className="App-results">
+            <h3 className="App-title">Última búsqueda</h3>
+            <ListOfGifs gifs={gifs} />
+          </div>
+          <div className="App-category">
+            <TrendingSearches />
+          </div>
         </div>
       </div>
     </>
