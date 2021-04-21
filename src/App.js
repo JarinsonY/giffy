@@ -21,7 +21,7 @@ export default function App() {
         <Suspense fallback={null} />
         <section className="App-content">
           <Link to='/'>
-          <figure className="App-logo">
+            <figure className="App-logo">
               <img alt='Giffy Logo' src={Logo} />
             </figure>
           </Link>
@@ -38,6 +38,9 @@ export default function App() {
             <Route
               component={Detail}
               path="/gif/:id"
+            />
+            <Route component={() => <h1>404 ERROR :(</h1>}
+              path="/404"
             />
           </GifsContextProvider>
         </section>

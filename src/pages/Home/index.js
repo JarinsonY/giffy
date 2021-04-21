@@ -4,6 +4,7 @@ import { useGifs } from 'hooks/useGifs'
 import TrendingSearches from "components/TrendingSearches"
 import SearchForm from "components/SearchForm"
 import { useCallback } from "react"
+import { Helmet } from "react-helmet"
 
 export default function Home() {
 
@@ -27,6 +28,9 @@ export default function Home() {
         </div>
         <div className="App-category">
           <TreandingSearches /> */}
+      <Helmet>
+        <title>Home | Giffy</title>
+      </Helmet>
       <header className="o-header">
         <SearchForm onSubmit={handleSubmit} />
       </header>

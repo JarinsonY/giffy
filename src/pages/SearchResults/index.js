@@ -4,6 +4,7 @@ import ListOfGifs from 'components/ListOfGifs/index'
 import { useGifs } from 'hooks/useGifs'
 import useNearScreen from 'hooks/useNearScreen'
 import debounce from 'just-debounce-it'
+import { Helmet } from 'react-helmet'
 
 export default function SearchResults({ params }) {
   const { keyword } = params
@@ -15,6 +16,8 @@ export default function SearchResults({ params }) {
     once: false
   })
 
+  const title = gifs
+    ? `${gifs.length} resultados de ${keyword}` : ''
 
   //Para controlar la llamada a la funcion al llegar al final (Scroll Infinito)
   // eslint-disable-next-line
@@ -33,6 +36,11 @@ export default function SearchResults({ params }) {
         {/* <h3 className="App-title">{decodeURI(keyword)}</h3>
         <ListOfGifs gifs={gifs} />
         <div id="visor" ref={externalRef}></div> */}
+        <Helmet>
+          <title>{title}</title>
+          <meta name="description" content={title} />
+          <meta name="rating" content="General" />
+        </Helmet>
         <div className="App-wrapper">
           <h3 className="App-title">
             {decodeURI(keyword)}
