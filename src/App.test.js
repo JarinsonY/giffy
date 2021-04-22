@@ -17,7 +17,7 @@ test('renders without crashing', async () => {
   expect(gifLink).toBeVisible()
 }); */
 
-test('search form cloud be used', async () => {
+/* test('search form cloud be used', async () => {
   render(<App />)
   const input = await screen.findByRole('textbox')
   const button = await screen.findByRole('button')
@@ -27,4 +27,4 @@ test('search form cloud be used', async () => {
 
   const title = await screen.findByText('Matrix')
   expect(title).toBeVisible()
-})
+}) */
