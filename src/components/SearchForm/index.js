@@ -7,7 +7,7 @@ const RATINGS = ['g', 'pg', 'pg-13', 'r']
 
 function SearchForm({ initialKeyword = '', initialRating = 'g' }) {
 
-    const { keyword, rating, times, updateKeyword, updateRating } = useForm({
+    const { keyword, rating, updateKeyword, updateRating } = useForm({
         initialKeyword,
         initialRating
     })
@@ -41,13 +41,12 @@ function SearchForm({ initialKeyword = '', initialRating = 'g' }) {
                 value={keyword}
             />
 
-            <select onChange={handleChangeRating} value={rating}>
+            <select className={css["c-search-list"]} onChange={handleChangeRating} value={rating}>
                 <option disabled>Rating type</option>
                 {RATINGS.map((rating => (
                     <option key={rating}>{rating}</option>
                 )))}
             </select>
-            <small>{times}</small>
         </form>
     )
 }

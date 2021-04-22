@@ -28,8 +28,7 @@ export default function useForm({
 } = {}) {
     const [state, dispatch] = useReducer(REDUCER, {
         keyword: decodeURIComponent(initialKeyword),
-        rating: initialRating,
-        times: 0
+        rating: initialRating
     })
 
     const { keyword, rating, times } = state

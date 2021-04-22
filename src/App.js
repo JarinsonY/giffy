@@ -10,6 +10,7 @@ import { GifsContextProvider } from "./context/GifsContext";
 
 import { Link, Route } from 'wouter'
 import { Suspense } from 'react';
+import ErrorPage from 'pages/ErrorPage';
 
 export default function App() {
 
@@ -39,8 +40,8 @@ export default function App() {
               component={Detail}
               path="/gif/:id"
             />
-            <Route component={() => <h1>404 ERROR :(</h1>}
-              path="/404"
+            <Route component={ErrorPage}
+              path="/:rest*"
             />
           </GifsContextProvider>
         </section>
