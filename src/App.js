@@ -41,7 +41,7 @@ export default function App() {
               path="/gif/:id"
             />
             <Route component={ErrorPage}
-              path="/:rest*"
+              path="/:rest"
             />
           </GifsContextProvider>
         </section>
